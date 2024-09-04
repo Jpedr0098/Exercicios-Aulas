@@ -1,15 +1,24 @@
 function medirTempoDeExecucao(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
-    // Lógica do decorator aqui
+
+    const metodoOriginal = descriptor.value;
+
+    descriptor.value = function (...args: any[]) {
+        console.time(propertyKey);  
+        const resultado = metodoOriginal.apply(this, args); 
+        console.timeEnd(propertyKey);  
+        return resultado;
+    };
+    
+    return descriptor;
 }
 
 class Calculadora {
     @medirTempoDeExecucao
     somarNumeros(array: number[]): number {
-        // Simula uma soma de números
-        return array.reduce((a, b) => a + b, 0);
+
+        return array.reduce((a, b) => a + b, 0); 
     }
 }
 
-// Exemplo de uso:
 const calc = new Calculadora();
-calc.somarNumeros([1, 2, 3, 4, 5]);  // Deve exibir o tempo de execução
+calc.somarNumeros([1, 2, 3, 4, 5]);
