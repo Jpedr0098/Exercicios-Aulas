@@ -17,14 +17,14 @@ var EmailInvalidoError = /** @class */ (function (_super) {
     __extends(EmailInvalidoError, _super);
     function EmailInvalidoError(message) {
         var _this = _super.call(this, message) || this;
-        _this.name = 'EmailInvalidoError';
+        _this.name = 'InvalidEmailError'; // Nome do erro customizado
         return _this;
     }
     return EmailInvalidoError;
 }(Error));
 function verificarEmail(email) {
     if (!email.includes('@')) {
-        throw new EmailInvalidoError('Email inválido: O email deve conter o caractere "@"');
+        throw new EmailInvalidoError('Email invalido! Não há o caractere "@"');
     }
     console.log('Email válido!');
 }

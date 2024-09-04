@@ -16,6 +16,6 @@ class Gerente extends Funcionario {
     }
 }
 
-const gerenteExemplo = new Gerente('Carlos', 'Gerente de TI', 12000, 'Tecnologia');
+const gerenteExemplo = new Gerente('Gabriel', 'Gerente de TIOPS', 7500, 'Tecnologia/Suporte');
 
 console.log(gerenteExemplo.descricaoDetalhada());

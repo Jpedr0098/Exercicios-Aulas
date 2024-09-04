@@ -1,0 +1,8 @@
+npm install -g typescript
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+
+#executar o código:
+tsc nome_arq.ts
+node nome_arq.js

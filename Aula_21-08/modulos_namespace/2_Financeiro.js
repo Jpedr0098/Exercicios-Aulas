@@ -11,15 +11,14 @@ var Financeiro;
         return valor - (valor * taxa);
     }
     Financeiro.calcularDesconto = calcularDesconto;
-    var Orcamento = /** @class */ (function () {
-        function Orcamento(valorTotal, itens) {
+    class Orcamento {
+        constructor(valorTotal, itens) {
             this.valorTotal = valorTotal;
             this.itens = itens;
         }
-        Orcamento.prototype.exibirOrcamento = function () {
-            return "Itens: ".concat(this.itens.join(', '), ", Valor Total: R$").concat(this.valorTotal.toFixed(2));
-        };
-        return Orcamento;
-    }());
+        exibirOrcamento() {
+            return `Itens: ${this.itens.join(', ')}, Valor Total: R$${this.valorTotal.toFixed(2)}`;
+        }
+    }
     Financeiro.Orcamento = Orcamento;
 })(Financeiro || (exports.Financeiro = Financeiro = {}));

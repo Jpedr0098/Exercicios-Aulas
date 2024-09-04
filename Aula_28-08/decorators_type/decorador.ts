@@ -12,6 +12,7 @@ function medirTempoDeExecucao(target: any, propertyKey: string, descriptor: Prop
 }
 
 class Calculadora {
+    @medirTempoDeExecucao
     somarNumeros(array: number[]): number {
         return array.reduce((a, b) => a + b, 0); 
     }

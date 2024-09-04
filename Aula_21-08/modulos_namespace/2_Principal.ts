@@ -1,4 +1,4 @@
-import { Financeiro } from './Financeiro';
+import { Financeiro } from './2_Financeiro';
 
 const orcamentoExemplo = new Financeiro.Orcamento(5000, ['Notebook', 'Mouse']);
 

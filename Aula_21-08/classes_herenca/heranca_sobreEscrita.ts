@@ -13,9 +13,9 @@ class ContaCorrente extends ContaBancaria {
 
     exibirSaldo(): string {
         const saldoTotal = this.saldo + this.limiteCredito;
-        return `${super.exibirSaldo()}, Saldo Toptal com Crédito: R$${saldoTotal.toFixed(2)}`;
+        return `${super.exibirSaldo()}, Saldo Total com Crédito: R$${saldoTotal.toFixed(2)}`;
     }
 }
 
-const contaCorrenteExemplo = new ContaCorrente('Jessica',7500, 2000);
+const contaCorrenteExemplo = new ContaCorrente('Julia',3500, 1000);
 console.log(contaCorrenteExemplo.exibirSaldo());
